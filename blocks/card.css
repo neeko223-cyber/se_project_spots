@@ -14,12 +14,12 @@
 
 .card__title {
         font-weight: 500;
-        font-style: medium;
+        font-style: normal;
         font-size: 20px;
         line-height: 120%;
         letter-spacing: 0%;
         color: #212121;
-        margin: 12px;
+        margin: 0;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -45,18 +45,16 @@
     opacity: 100%;
 }
 
-@media screen and (max-width: 1320px) {
-    .card {
-        display: grid;
-        justify-content: center;
-    } 
+@media screen and (max-width:1320px) {
+    .card__image {
+        height: 413px;
+    }
     
 }
 
 @media screen and (max-width: 630px) {
-    .card {
-        display: grid;
-        justify-content: center;
+    .card__image {
+        height: 288px;
     }
 }
 

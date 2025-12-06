@@ -8,12 +8,14 @@
     margin-right: 20px;
     height: 190px;
     width: 190px;
+    border-radius: 8px;
 }
 
 .profile__column {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    max-width: 420px;
 }
 
 .profile__name {
@@ -25,6 +27,7 @@
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     max-width: 100%;
  }
@@ -33,20 +36,24 @@
 .profile__description {
     margin: 0;
     font-weight: 500;
-    font-style: medium;
+    font-style: normal;
     font-size: 16px;
     line-height: 100%;
-    letter-spacing: 0%;
+    letter-spacing: 0;
     color: #212121;
     opacity: 70%;
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    max-width: 100%;
+    max-width: 420px;
 }
 
 .profile__edit-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin-top: auto;
     margin-right: 20px;
     background: none;
@@ -57,11 +64,8 @@
     transition: opacity 0.3s ease;
 }
 
-
-
 .profile__edit-button:hover {
     opacity: 1;
-    font-weight: 700;
 }
 
 .profile__add-button {
@@ -71,7 +75,7 @@
     height: 52px;
     border-radius: 8px;
     background-color: black;
-    color:white;
+    color: #fcf5e5;
     transition: opacity 0.3s ease;
     cursor: pointer;
 }
@@ -91,7 +95,7 @@
     }
 
     .profile__avatar {
-        margin-right: 0;
+        margin: 0 0 12px;
         height: 80px;
         width: 80px;
         margin-bottom: 12px;
@@ -99,7 +103,7 @@
 
     .profile__name {
         font-size: 20px;
-        margin-bottom: 6px;
+        margin: 0 0 6px;
         max-width: 282px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -131,14 +135,7 @@
 
     .profile__add-button {
         margin: 0;
-        background-color: black;
-        color:white;
         width: 288px;
-        height: 52px;
-        border-radius: 8px;
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-
     }
 
     .profile__add-button:hover {

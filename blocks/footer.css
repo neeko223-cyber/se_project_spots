@@ -7,11 +7,13 @@
 }
 
 .footer__copyright {
+  color: #212121;
   margin: 0; 
   font-weight: 400;
-  font-style: regular;
+  font-style: normal;
   font-size: 16px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: 0;
+  opacity: 0.7;
   
 }
