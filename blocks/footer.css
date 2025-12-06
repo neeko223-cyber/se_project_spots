@@ -1,0 +1,17 @@
+.footer {
+  padding: 20px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  text-align: center; 
+  justify-content: center;
+}
+
+.footer__copyright {
+  margin: 0; 
+  font-weight: 400;
+  font-style: regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  
+}

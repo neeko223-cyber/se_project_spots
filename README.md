@@ -1,21 +1,32 @@
 # Project 3: Spots
 
 ### Overview  
-
-* Intro  
-* Figma  
-* Images  
+This project is a the third project of Software Eengineering at TripleTen. It was created using Figma an outside layout for the project. HTML and CSS were based on the information and design on the Figma page.
   
 **Intro**
   
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.  
+This Project makes use of the transition of multiple screen sizes. It aslo uses interactive buttons with hovering effects such as an "Edit profile", "Like Button", and a "New Post" button. 
   
 **Figma**  
   
 * [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
+
+## Techniques
+- HTML
+- CSS
+- Exporting Images from Figma
+- Media Queries for multiple views
+- Text Overflow
+- Cards Layout
+- Interactive Buttons
+
+### Improvements
+Things i wish to improve on is a better understand of the Media Queries. I struggled after the video setup for it to implement the necessary requirements to complete on time for the project. I wish to in the future to study more on this and Improve on the coding for this. I also still struggle with rereading my code to find misspelling errors causing things to not work.
+
+## Project Pitch Video
+ 
+ Check out [this video](https://drive.google.com/file/d/136MVaBxGEoGTotZJlOS7Xw1i0t0GAxzS/view?usp=sharing), where I describe my 
+ project and some challenges I faced while building it.
+
   
-**Images**  
-  
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-  
-Good luck and have fun!
+
