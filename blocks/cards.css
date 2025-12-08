@@ -35,6 +35,10 @@
 }
 
 @media screen and (max-width:630px) {
+    .cards {
+        padding-bottom: 20px;
+    }
+   
     .cards__list {
         grid-template-columns: repeat(1, 288px);
     }

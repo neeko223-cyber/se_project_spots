@@ -29,7 +29,7 @@ Things i wish to improve on is a better understand of the Media Queries. I strug
 
 ## Project Pitch Video
  
- Check out [this video](https://drive.google.com/file/d/1VbFPlZwYt3wZylR-wGew1jkpMRz1O85G/view?usp=vids_web), where I describe my 
+ [Check out this video](https://drive.google.com/file/d/1VbFPlZwYt3wZylR-wGew1jkpMRz1O85G/view?usp=vids_web), where I describe my 
  project and some challenges I faced while building it.
 
   
