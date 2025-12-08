@@ -13,7 +13,7 @@ This Project makes use of the transition of multiple screen sizes. It aslo uses 
 
 ## My Project Link
  Here is the Link to my Project directly.
- * [Link to my project](https://github.com/neeko223-cyber/se_project_spots.git)
+ * [Link to my project](https://neeko223-cyber.github.io/se_project_spots/)
 
 ## Techniques
 - HTML
