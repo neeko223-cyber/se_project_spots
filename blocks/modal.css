@@ -39,6 +39,14 @@
     font-style: normal;
     font-size: 16px;
     line-height: 110%;
+    opacity: 40%;
+    background-color: transparent;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.modal__input:hover {
+    opacity: 100%;
 }
 
 .modal__close-button {
