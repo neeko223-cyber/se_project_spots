@@ -1,8 +1,11 @@
 const initialCards = [
     {
+        name:"Golden Gate Bridge",
+        link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
+    },
+    {
         name: "Val Thorens",
         link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"
-
     },
     {
         name: "Resturant terrace",
@@ -40,8 +43,51 @@ const addCardFormElement = newPostModal.querySelector(".modal__form");
 const cardImageInput = newPostModal.querySelector("#card-image-input");
 const cardCaptionInput = newPostModal.querySelector("#card-caption-input");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalCloseButton = previewModal.querySelector(".modal__close-button");
+const previewImageEl = previewModal.querySelector(".modal__image-preview");
+const previewCaptionEl = previewModal.querySelector(".modal__caption");
+
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+
+const cardTemplate = document.querySelector("#card-template");
+const cardlist = document.querySelector(".cards__list");
+   
+function getCardElement(data) {
+    const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+    const cardImageEl = cardElement.querySelector(".card__image");
+    const cardTitleEl = cardElement.querySelector(".card__title");
+    
+    cardImageEl.src = data.link;
+    cardImageEl.alt = data.name;
+    cardTitleEl.textContent = data.name;
+
+    const cardLikeButtonEl = cardElement.querySelector(".card__like-button");
+    cardLikeButtonEl.addEventListener("click", () => {
+        cardLikeButtonEl.classList.toggle("card__like-button_active");
+    });
+
+    const cardDeleteButtonEl = cardElement.querySelector(".card__delete-button");
+    cardDeleteButtonEl.addEventListener("click", () => {
+        cardElement.remove();
+        cardElement = null;
+    });
+
+    cardImageEl.addEventListener("click", () => {
+        previewImageEl.src = data.link;
+        previewImageEl.alt = data.name;
+        previewCaptionEl.textContent = data.name;
+        openModal(previewModal);
+    });
+
+    
+
+
+
+    return cardElement;
+
+}
 
 function openModal(modal) {
     modal.classList.add("modal_is-opened");
@@ -91,10 +137,32 @@ newPostCloseButton.addEventListener("click", () => {
   closeModal(newPostModal);
 });
 
-addCardFormElement.addEventListener("submit", handleNewPostFormSubmit);
+previewModalCloseButton.addEventListener("click", () => {
+  closeModal(previewModal);
+});
+
+addCardFormElement.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+
+    const inputValues = {
+        name: cardCaptionInput.value,
+        link: cardImageInput.value,
+    };
+    console.log(inputValues);
+
+    const newCardData = getCardElement({
+        name: cardCaptionInput.value,
+        link: cardImageInput.value,
+    });
+    cardlist.prepend(newCardData);
+
+    newPostModal.classList.remove("modal_is-opened");
+    addCardFormElement.reset();
+});
+
 editProfileForm.addEventListener("submit", handleEditProfileFormSubmit);
 
-initialCards.forEach(function (card) {
-    console.log(card.name);
-    console.log(card.link);
+initialCards.forEach(function (item) {
+    const cardElement = getCardElement(item);
+    cardlist.append(cardElement);
 });
