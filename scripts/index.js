@@ -52,7 +52,7 @@ const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
 
 const cardTemplate = document.querySelector("#card-template");
-const cardlist = document.querySelector(".cards__list");
+const cardList = document.querySelector(".cards__list");
    
 function getCardElement(data) {
     const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -71,7 +71,6 @@ function getCardElement(data) {
     const cardDeleteButtonEl = cardElement.querySelector(".card__delete-button");
     cardDeleteButtonEl.addEventListener("click", () => {
         cardElement.remove();
-        cardElement = null;
     });
 
     cardImageEl.addEventListener("click", () => {
