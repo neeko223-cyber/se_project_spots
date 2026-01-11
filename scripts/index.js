@@ -100,22 +100,12 @@ function handleEditProfileNameInput(evt) {
     profileNameEl.textContent = editProfileNameInput.value;
     profileDescriptionEl.textContent = editProfileDescriptionInput.value;
     closeModal(editProfileModal);
-    console.log("submitting");
 }
 
 function handleEditProfileFormSubmit(evt) {
     evt.preventDefault();
     profileNameEl.textContent = editProfileNameInput.value;
     profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-    console.log("submitting");
-    closeModal(editProfileModal);
-}
-
-function handleNewPostFormSubmit(evt) {
-    evt.preventDefault();
-    console.log(cardImageInput.value);
-    console.log(cardCaptionInput.value);
-    closeModal(newPostModal);
 }
 
 editProfileButton.addEventListener("click", function () {
@@ -147,13 +137,11 @@ addCardFormElement.addEventListener("submit", function (evt) {
         name: cardCaptionInput.value,
         link: cardImageInput.value,
     };
-    console.log(inputValues);
-
     const newCardData = getCardElement({
         name: cardCaptionInput.value,
         link: cardImageInput.value,
     });
-    cardlist.prepend(newCardData);
+    cardList.prepend(newCardData);
 
     newPostModal.classList.remove("modal_is-opened");
     addCardFormElement.reset();
@@ -163,5 +151,5 @@ editProfileForm.addEventListener("submit", handleEditProfileFormSubmit);
 
 initialCards.forEach(function (item) {
     const cardElement = getCardElement(item);
-    cardlist.append(cardElement);
+    cardList.append(cardElement);
 });
