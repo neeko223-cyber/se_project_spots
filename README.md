@@ -28,9 +28,12 @@ This Project makes use of the transition of multiple screen sizes. It aslo uses 
 Things i wish to improve on is a better understand of the Media Queries. I struggled after the video setup for it to implement the necessary requirements to complete on time for the project. I wish to in the future to study more on this and Improve on the coding for this. I also still struggle with rereading my code to find misspelling errors causing things to not work.
 
 ## Project Pitch Video
+
+Check out these videos, where I describe my project and some of the challenges I faced building it:
  
- [Check out this video](https://drive.google.com/file/d/1VbFPlZwYt3wZylR-wGew1jkpMRz1O85G/view?usp=vids_web), where I describe my 
- project and some challenges I faced while building it.
+ [NicholasLawrence-ProjectPitch-SpotsStage2](https://drive.google.com/file/d/1VbFPlZwYt3wZylR-wGew1jkpMRz1O85G/view?usp=vids_web), 
+
+ [NicholasLawrence-ProjectPitch-SpotStage9](https://drive.google.com/file/d/1WIRAmgseAl-2Knm-hOR9sliH-xEG3vQu/view?usp=sharing), where I describe my updated project and some of the challenges I faced while updating it.
 
   
 
