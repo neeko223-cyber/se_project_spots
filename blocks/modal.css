@@ -79,7 +79,7 @@
 }
 
 .modal__input:hover {
-    opacity: 100%;
+    opacity: 1;
 }
 
 .modal__input-error {
@@ -89,10 +89,10 @@
     font-weight: 500;
     font-style: normal;
     font-size: 12px;
-    visibility: none;
+    visibility: hidden;
 }
 
-.modal__input-error_visible {
+.modal__input_error_visible {
     display: block;
     visibility: visible;
 }
@@ -101,6 +101,12 @@
     border-color: #ff0000;
     margin-top: 8px;
     font-size: 16px;
+}
+
+.modal__submit-button_disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
 }
 
 .modal__close-button {
