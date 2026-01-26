@@ -81,10 +81,6 @@ function getCardElement(data) {
         openModal(previewModal);
     });
 
-    
-
-
-
     return cardElement;
 
 }
@@ -105,6 +101,7 @@ function openModal(modal) {
 function closeModal(modal) {
     modal.classList.remove("modal_is-opened");
     document.removeEventListener("keydown", handleEscapeKey);
+    modal.removeEventListener("click", closeOnOverlay);
 }
 
 function handleEscapeKey(evt) {

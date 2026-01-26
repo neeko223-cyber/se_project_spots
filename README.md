@@ -1,7 +1,7 @@
 # Project 3: Spots
 
 ### Overview  
-This project is a the third project of Software Eengineering at TripleTen. It was created using Figma an outside layout for the project. HTML and CSS were based on the information and design on the Figma page.
+This project is a the third project of Software Engineering at TripleTen. It was created using Figma an outside layout for the project. HTML and CSS were based on the information and design on the Figma page.
   
 **Intro**
   

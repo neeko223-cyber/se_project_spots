@@ -10,37 +10,15 @@
     padding: 0;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 413px); 
+    grid-template-columns: repeat(auto-fit, 413px); 
     justify-content: center;
     gap: 40px 20px;
 
 }
 
-@media screen and (max-width:1320px) {
+@media screen and (max-width: 627px) {
     .cards__list {
-        grid-template-columns: repeat(2, 413px);
-        gap: 20px;
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width:880px) and (min-width:630px) {
-   .cards__list {
-        grid-template-columns:  repeat(1, 413px);
-        gap: 20px;
-        justify-content: center;
-    }
-
-
-}
-
-@media screen and (max-width:630px) {
-    .cards {
-        padding-bottom: 20px;
-    }
-   
-    .cards__list {
-        grid-template-columns: repeat(1, 288px);
+        grid-template-columns: 1fr; 
     }
 }
 

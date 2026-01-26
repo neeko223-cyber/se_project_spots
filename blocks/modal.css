@@ -251,9 +251,7 @@
         margin-top: 24px;
         margin-bottom: 12px;
     }
-}
 
-@media screen and (max-width: 630px) {
     .modal__close-button_preview {
         top: -48px;
         right: 0;

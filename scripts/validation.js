@@ -42,11 +42,15 @@ const toggleButtonState = (inputList, buttonEl, config) => {
     if (hasInvalidInput(inputList, config)) {
         disableSubmitButton(buttonEl, config);
     } else {
-        buttonEl.classList.remove(config.inactiveButtonClass);
-        buttonEl.disabled = false;
+        enableSubmitButton(buttonEl, config);
     }
-    
 };
+
+const enableSubmitButton = (buttonEl, config) => {
+    buttonEl.classList.remove(config.inactiveButtonClass);
+    buttonEl.disabled = false;
+};
+
 
 const disableSubmitButton = (buttonEl, config) => {
     buttonEl.classList.add(config.inactiveButtonClass);

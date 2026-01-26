@@ -3,24 +3,8 @@
     margin: 0 auto;
 }
 
-@media screen and (max-width:1320px) {
-    
+@media screen and (max-width: 627px) {
     .content {
-        padding: 0 20px; 
-        margin: 0 auto;
-    }
-    
-}
-
-@media screen and (max-width:880px) and (min-width: 630px) {
-    .content {
-        padding: 0 20px;
-    }
-}
-
-@media screen and (max-width: 630px) {
-    
-    .content {
-        padding: 0 20px;
+        padding: 0 16px;
     }
 }
