@@ -117,7 +117,7 @@
     right: 50px;
     background: none;
     border: none;
-    background-image: url(../images/Close\ Icon.svg);
+    background-image: url(../images/close-icon.svg);
     background-repeat: no-repeat;
     cursor: pointer;
     transition: opacity 0.3s;
@@ -127,7 +127,7 @@
 .modal__close-button_preview {
     top: 0;
     right: -52.5px;
-    background-image: url(../images/Close\ button\ preview.svg);
+    background-image: url(../images/close-button-preview.svg);
     cursor: pointer;
     border: none;
 }
@@ -255,7 +255,7 @@
     .modal__close-button_preview {
         top: -48px;
         right: 0;
-        background-image: url(../images/Close\ button\ preview.svg);
+        background-image: url(../images/close-button-preview.svg);
         cursor: pointer;
         transition: opacity 0.3s, top 0.3s ease, right 0.3s ease;
     }
