@@ -60,6 +60,7 @@ const disableSubmitButton = (buttonEl, config) => {
 
 const resetValidation = (formEl, config) => {
     const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
+    const buttonElement = formEl.querySelector(config.submitButtonSelector);
     inputList.forEach((inputEl) => {
         hideInputError(formEl, inputEl, config);
     });
