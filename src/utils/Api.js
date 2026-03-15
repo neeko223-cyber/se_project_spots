@@ -70,7 +70,7 @@ class Api {
       if (res.ok) {
         return res.json();
       }
-      Promise.reject(`Error: ${res.status}`);
+      return Promise.reject(`Error: ${res.status}`);
     });
   }
 
@@ -94,11 +94,11 @@ class Api {
     }).then(this._handleResponse);
 }
 
-removeLike(cardId) {
-  return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-    method: "DELETE",
-    headers: this._headers,
-  }).then(this._handleResponse);
+  removeLike(cardId) {
+    return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
+      method: "DELETE",
+      headers: this._headers,
+    }).then(this._handleResponse);
 }
 }
 

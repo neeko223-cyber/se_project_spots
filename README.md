@@ -35,7 +35,6 @@ Check out these videos, where I describe my project and some of the challenges I
 
  [NicholasLawrence-ProjectPitch-SpotStage9](https://drive.google.com/file/d/1WIRAmgseAl-2Knm-hOR9sliH-xEG3vQu/view?usp=sharing), where I describe my updated project and some of the challenges I faced while updating it.
 
- [NicholasLawrence-ProjectPitch-SpotsFinal](), This is the final update for my project which consist of using API Interactions to make it easier to use my project on databases. It will allow user changes to the cards or the profile info whenever the page reloads. 
-
+ [NicholasLawrence-ProjectPitch-SpotsFinal](), This is the final update for my project which consist of using API Interactions to make it easier to use my project on databases. It also decribes some of the challenges i faced during this final project.
   
 

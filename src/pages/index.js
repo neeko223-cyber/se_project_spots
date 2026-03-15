@@ -129,9 +129,7 @@ function getCardElement(data) {
   const deleteButton =
     cardElement.querySelector(".card__delete-button");
 
-  const isLiked = likeButton.classList.contains("card__like-button_active");
-
-  if (data.likes && data.likes.some(user => user._id === currentUserId)) {
+  if (data.isLiked){
     likeButton.classList.add("card__like-button_active");
   }
 
@@ -141,27 +139,21 @@ function getCardElement(data) {
 
   /* ---- LIKE BUTTON ---- */
 
-  likeButton.addEventListener("click", () => {
+ likeButton.addEventListener("click", () => {
 
   const isLiked = likeButton.classList.contains("card__like-button_active");
 
-  if (!isLiked) {
+  api.changeLikeCardStatus(data._id, isLiked)
+    .then((updatedCard) => {
 
-    api.addLike(data._id)
-      .then(() => {
-        likeButton.classList.add("card__like-button_active");
-      })
-      .catch(console.error);
+      const likedByUser =
+        updatedCard.likes &&
+        updatedCard.likes.some(user => user._id === currentUserId);
 
-  } else {
+      likeButton.classList.toggle("card__like-button_active", likedByUser);
 
-    api.removeLike(data._id)
-      .then(() => {
-        likeButton.classList.remove("card__like-button_active");
-      })
-      .catch(console.error);
-
-  }
+    })
+    .catch(console.error);
 
 });
 
@@ -283,10 +275,8 @@ api
     profileAvatarEl.src = userData.avatar;
 
     cards.forEach((card) => {
-
       const cardElement = getCardElement(card);
       cardList.append(cardElement);
-
     });
 
   })
