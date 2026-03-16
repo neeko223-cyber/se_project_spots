@@ -139,7 +139,7 @@ function getCardElement(data) {
 
   /* ---- LIKE BUTTON ---- */
 
- likeButton.addEventListener("click", () => {
+ likeButton.addEventListener("mousedown", () => {
 
   const isLiked = likeButton.classList.contains("card__like-button_active");
 
@@ -159,7 +159,7 @@ function getCardElement(data) {
 
   /* ---- DELETE BUTTON ---- */
 
-  deleteButton.addEventListener("click", () => {
+  deleteButton.addEventListener("mousedown", () => {
 
     cardToDelete = cardElement;
     cardIdToDelete = data._id;
@@ -170,7 +170,7 @@ function getCardElement(data) {
 
   /* ---- IMAGE PREVIEW ---- */
 
-  cardImageEl.addEventListener("click", () => {
+  cardImageEl.addEventListener("mousedown", () => {
 
     previewImageEl.src = data.link;
     previewImageEl.alt = data.name;
@@ -185,6 +185,8 @@ function getCardElement(data) {
 
 /* ---------------- MODAL FUNCTIONS ---------------- */
 
+const modals = document.querySelectorAll(".modal");
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscapeKey);
@@ -194,12 +196,11 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
   document.removeEventListener("keydown", handleEscapeKey);
 }
-const modals = document.querySelectorAll(".modal");
 
 function handleOverlayClick(evt) {
 
-  if (evt.target.classList.contains("modal")) {
-    closeModal(evt.target);
+  if (evt.target === evt.currentTarget) {
+    closeModal(evt.currentTarget);
   }
 
 }
@@ -213,12 +214,10 @@ modals.forEach((modal) => {
 function handleEscapeKey(evt) {
 
   if (evt.key === "Escape") {
-
-    const openedModal =
-      document.querySelector(".modal");
-
-    closeModal(openedModal);
-
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
   }
 
 }
@@ -284,8 +283,8 @@ function handleAvatarFormSubmit(evt) {
 
 api
   .getAppInfo()
-  .then(([cards, userData]) => {
-
+  .then((response) => {
+    const [userData, cards] = response;
     currentUserId = userData._id;
 
     profileNameEl.textContent = userData.name;
@@ -301,10 +300,16 @@ api
   .catch(console.error);
 
 /* ---------------- EVENT LISTENERS ---------------- */
+const closeButtons = document.querySelectorAll('.modal__close-button');
+closeButtons.forEach((button) => {
+  const modal = button.closest('.modal');
+  button.addEventListener('click', () => closeModal(modal));
+});
+
 
 /* Edit profile */
 
-editProfileButton.addEventListener("click", () => {
+editProfileButton.addEventListener("mousedown", () => {
 
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value =
@@ -316,10 +321,6 @@ editProfileButton.addEventListener("click", () => {
 
 });
 
-editProfileCloseButton.addEventListener("click", () => {
-  closeModal(editProfileModal);
-});
-
 editProfileForm.addEventListener(
   "submit",
   handleEditProfileFormSubmit
@@ -327,12 +328,8 @@ editProfileForm.addEventListener(
 
 /* Add card */
 
-newPostButton.addEventListener("click", () => {
+newPostButton.addEventListener("mousedown", () => {
   openModal(newPostModal);
-});
-
-newPostCloseButton.addEventListener("click", () => {
-  closeModal(newPostModal);
 });
 
 addCardFormElement.addEventListener("submit", (evt) => {
@@ -368,7 +365,7 @@ addCardFormElement.addEventListener("submit", (evt) => {
 
 /* DELETE CONFIRMATION */
 
-deleteConfirmButton.addEventListener("click", (evt) => {
+deleteConfirmButton.addEventListener("mousedown", (evt) => {
 
   evt.preventDefault();
 
@@ -397,19 +394,13 @@ deleteConfirmButton.addEventListener("click", (evt) => {
 
 /* CANCEL DELETE */
 
-cancelDeleteButton.addEventListener("click", () => {
-  closeModal(deleteModal);
-});
-
-/* CLOSE DELETE MODAL */
-
-deleteModalCloseButton.addEventListener("click", () => {
+cancelDeleteButton.addEventListener("mousedown", () => {
   closeModal(deleteModal);
 });
 
 /* Avatar */
 
-avatarEditButton.addEventListener("click", () => {
+avatarEditButton.addEventListener("mousedown", () => {
 
   resetValidation(avatarForm, validationConfig);
 
@@ -417,20 +408,10 @@ avatarEditButton.addEventListener("click", () => {
 
 });
 
-avatarModalCloseButton.addEventListener("click", () => {
-  closeModal(editAvatarModal);
-});
-
 avatarForm.addEventListener(
   "submit",
   handleAvatarFormSubmit
 );
-
-/* Preview */
-
-previewModalCloseButton.addEventListener("click", () => {
-  closeModal(previewModal);
-});
 
 /* Validation */
 
