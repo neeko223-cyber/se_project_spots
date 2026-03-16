@@ -194,13 +194,28 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
   document.removeEventListener("keydown", handleEscapeKey);
 }
+const modals = document.querySelectorAll(".modal");
+
+function handleOverlayClick(evt) {
+
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+
+}
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", handleOverlayClick);
+
+  });
+
 
 function handleEscapeKey(evt) {
 
   if (evt.key === "Escape") {
 
     const openedModal =
-      document.querySelector(".modal_is-opened");
+      document.querySelector(".modal");
 
     closeModal(openedModal);
 
@@ -231,7 +246,7 @@ function handleEditProfileFormSubmit(evt) {
     })
     .catch(console.error)
     .finally(() => {
-        submitButton.textContent = "Save";
+        setButtonText(submitButton, false);
       });
 
    
@@ -258,7 +273,10 @@ function handleAvatarFormSubmit(evt) {
       avatarForm.reset();
 
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+        setButtonText(submitButton, false);
+      });
 
 }
 
@@ -341,13 +359,18 @@ addCardFormElement.addEventListener("submit", (evt) => {
       disableSubmitButton(cardSubmitButton, validationConfig);
 
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+        setButtonText(submitButton, false);
+      });
 
 });
 
 /* DELETE CONFIRMATION */
 
-deleteConfirmButton.addEventListener("click", () => {
+deleteConfirmButton.addEventListener("click", (evt) => {
+
+  evt.preventDefault();
 
   if (!cardIdToDelete) {
     console.error("No card selected for deletion.");
@@ -365,7 +388,10 @@ deleteConfirmButton.addEventListener("click", () => {
       closeModal(deleteModal);
 
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+        setButtonText(submitButton, false);
+      });
 
 });
 
