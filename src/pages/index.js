@@ -365,7 +365,9 @@ addCardFormElement.addEventListener("submit", (evt) => {
 
 /* DELETE CONFIRMATION */
 
-deleteConfirmButton.addEventListener("mousedown", (evt) => {
+const confirmationForm = document.forms["delete-form"];
+
+confirmationForm.addEventListener("submit", (evt) => {
 
   evt.preventDefault();
 
@@ -375,6 +377,8 @@ deleteConfirmButton.addEventListener("mousedown", (evt) => {
   }
 
   const submitButton = deleteConfirmButton;
+  const initialText = submitButton.textContent;
+
   setButtonText(submitButton, true, "Deleting...", "Delete");
 
   api.deleteCard(cardIdToDelete)
@@ -387,7 +391,7 @@ deleteConfirmButton.addEventListener("mousedown", (evt) => {
     })
     .catch(console.error)
     .finally(() => {
-        setButtonText(submitButton, false);
+        setButtonText(submitButton, false, "Deleting...", "Delete");
       });
 
 });

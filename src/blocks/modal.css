@@ -1,5 +1,5 @@
 .modal {
-    font-family: "Poppins, Arial, Helvetica, sans-serif" ;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     visibility: hidden;
     opacity: 0;
     transition: 0.7s opacity ease, 0.7s visibility ease;
@@ -25,16 +25,18 @@
 }
 
 .modal__container {
-    max-width: 630px;
+    max-width: 730px;
     width: 100%;
     border-radius: 8px;
     background-color: #fff;
-    padding: 32px 20px;
+    padding: 32px 50px;
     position: relative;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+}
+
+.modal__container--delete {
+    background-color: #fff5f5;
+    border: 1px solid #ff4d4f;
 }
 
 .modal#delete-modal .modal__form {
@@ -63,7 +65,7 @@
 .modal__submit-button.modal__delete-button {
     background-color: #ff0000;
     color: #212121;
-    font-family: "Poppins, Arial, Helvetica, sans-serif" ;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .modal__submit-button.modal__delete-button:hover {
@@ -84,7 +86,6 @@
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 1;
     letter-spacing: 0;
 
 }
@@ -205,7 +206,7 @@
 .modal__title {
     margin: 0 0 32px;
     width: 169px;
-    font-family: "Poppins, Arial, Helvetica, sans-serif" ;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
     font-size: 32px;
     font-weight: 500;
     font-style: normal;
