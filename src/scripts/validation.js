@@ -1,4 +1,4 @@
-const settings = {
+const validationConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-button",
@@ -21,7 +21,8 @@ function hideInputError(formEl, inputEl, config) {
     errorMsgEl.textContent = "";
     errorMsgEl.classList.remove(config.errorClass);
     inputEl.classList.remove(config.inputErrorClass);
-}
+};
+    
 
 const checkInputValidity = (formEl, inputElement, config) => {
     if (!inputElement.validity.valid) {
@@ -59,9 +60,11 @@ const disableSubmitButton = (buttonEl, config) => {
 
 const resetValidation = (formEl, config) => {
     const inputList = Array.from(formEl.querySelectorAll(config.inputSelector));
+    const buttonElement = formEl.querySelector(config.submitButtonSelector);
     inputList.forEach((inputEl) => {
         hideInputError(formEl, inputEl, config);
     });
+    toggleButtonState(inputList, buttonElement, config);
 };
 
 const setEventListeners = (formEl, config) => {
@@ -85,4 +88,4 @@ const enableValidation = (config) => {
     });
 };
 
-enableValidation(settings);
+export { enableValidation, resetValidation, disableSubmitButton, validationConfig };
